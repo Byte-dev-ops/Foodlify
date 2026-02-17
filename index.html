@@ -1,850 +1,785 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
-    rel="stylesheet"
-  />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Tailwind Output -->
     <link href="/dist/output.css" rel="stylesheet" />
-    <title>responsive || FoodLify website</title>
+
+    <title>FoodLify — Culinary Excellence</title>
   </head>
-  <body>
-    <!-- Header -->
-    <header class="bg-primaryColor dark:bg-darkColor fixed top-0 left-0 w-full z-50"  id="header">
-      <nav class="container relative h-14 flex justify-between items-center">
-        <div>
-          <a href="#" class="text-2xl uppercase font-oswald">
-            Food<span class="text-secondaryColor">lify</span>
-          </a>
-        </div>
+  <body class="bg-darkBase text-creamColor font-montserrat tracking-wider cursor-none overflow-x-hidden">
 
-        <div class="hidden absolute top-0 left-0 w-full py-14 bg-primaryColor dark:bg-darkColor border-b border-secondaryColor md:block md:static md:py-0 md:border-none md:w-auto md:ml-auto" id="nav-menu">
-          <ul class="flex flex-col text-center gap-5 md:flex-row">
-            <li>
-              <a href="#home" class="nav__link text-secondaryColor hover:text-secondaryColor ease-in duration-200">Home</a>
-            </li>
-            <li>
-              <a href="#about" class="nav__link hover:text-secondaryColor ease-in duration-200">About Us</a>
-            </li>
-            <li>
-              <a href="#menu" class="nav__link hover:text-secondaryColor ease-in duration-200">Menu</a>
-            </li>
-            <li>
-              <a href="#review" class="nav__link hover:text-secondaryColor ease-in duration-200">Review</a>
-            </li>
-            <li>
-              <a href="#contact" class="nav__link hover:text-secondaryColor ease-in duration-200">Contact</a>
-            </li>
-          </ul>
+    <!-- ═══ CUSTOM CURSOR ═══ -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
 
-          <div class="absolute top-[0.7rem] right-4 text-2xl cursor-pointer md:hidden" id="nav-close">
-            <i class="ri-close-line"></i>
-          </div>
-        </div>
+    <!-- ═══ GRAIN OVERLAY ═══ -->
+    <div class="grain-overlay"></div>
 
-        <div class="flex items-center gap-5">
-          <i class="ri-moon-line cursor-pointer ml-4 text-xl" id="theme-toggle"></i>
+    <!-- ═══ SCROLL UP ═══ -->
+    <a href="#home" id="scroll-up"
+       class="fixed right-6 -bottom-24 z-50 w-11 h-11 bg-goldColor flex items-center justify-center text-darkBase text-sm hover:bg-goldLight hover:-translate-y-1 ease-in duration-300 transition-all">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
 
-          <div class="md:hidden" id="hamburger">
-            <i class="ri-menu-2-line cursor-pointer text-xl"></i>
-          </div>
-        </div>
+    <!-- ═══ HEADER ═══ -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 h-18 flex items-center justify-between px-6 lg:px-20 transition-all duration-500">
+      <a href="#home" class="logo-text font-playfair text-2xl font-black uppercase tracking-widest text-creamColor no-underline">
+        Food<span class="text-goldColor italic">lify</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-10">
+        <a href="#home"   class="nav__link text-xs font-semibold tracking-widest uppercase text-silverColor hover:text-goldColor transition-colors duration-300 relative nav-underline">Home</a>
+        <a href="#about"  class="nav__link text-xs font-semibold tracking-widest uppercase text-silverColor hover:text-goldColor transition-colors duration-300 relative nav-underline">About</a>
+        <a href="#menu"   class="nav__link text-xs font-semibold tracking-widest uppercase text-silverColor hover:text-goldColor transition-colors duration-300 relative nav-underline">Menu</a>
+        <a href="#review" class="nav__link text-xs font-semibold tracking-widest uppercase text-silverColor hover:text-goldColor transition-colors duration-300 relative nav-underline">Reviews</a>
+        <a href="#contact" class="nav__link text-xs font-semibold tracking-widest uppercase text-silverColor hover:text-goldColor transition-colors duration-300 relative nav-underline">Contact</a>
       </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="#menu" class="hidden md:inline-block text-xs font-semibold tracking-widest uppercase bg-goldColor text-darkBase px-6 py-3 hover:bg-goldLight transition-all duration-300 hover:-translate-y-0.5">
+          Order Now
+        </a>
+        <!-- Theme Toggle -->
+        <i class="ri-moon-line cursor-none text-xl text-silverColor hover:text-goldColor transition-colors duration-200" id="theme-toggle"></i>
+        <!-- Hamburger -->
+        <div class="md:hidden" id="hamburger">
+          <i class="ri-menu-2-line cursor-none text-xl text-silverColor"></i>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="hidden absolute top-0 left-0 w-full py-16 bg-darkBase border-b border-goldColor/20 md:hidden z-40" id="nav-menu">
+        <ul class="flex flex-col text-center gap-6">
+          <li><a href="#home"    class="nav__link text-sm uppercase tracking-widest hover:text-goldColor transition-colors duration-200">Home</a></li>
+          <li><a href="#about"   class="nav__link text-sm uppercase tracking-widest hover:text-goldColor transition-colors duration-200">About Us</a></li>
+          <li><a href="#menu"    class="nav__link text-sm uppercase tracking-widest hover:text-goldColor transition-colors duration-200">Menu</a></li>
+          <li><a href="#review"  class="nav__link text-sm uppercase tracking-widest hover:text-goldColor transition-colors duration-200">Review</a></li>
+          <li><a href="#contact" class="nav__link text-sm uppercase tracking-widest hover:text-goldColor transition-colors duration-200">Contact</a></li>
+        </ul>
+        <div class="absolute top-3 right-5 text-2xl cursor-none" id="nav-close">
+          <i class="ri-close-line"></i>
+        </div>
+      </div>
     </header>
+
     <main>
-      <!-- home -->
-      <section id="home">
-        <div class="container flex flex-col items-center gap-10 md:flex-row">
-          <div class="mx-auto md:basic-1/2 lg:basic-2/3 animate-movingY">
-            <img
-              src="./img/home-image.png"
-              alt="burger-img"
-              class=" home__image w-60 md:w-full"
-            />
-          </div>
-          <div class="home__content text-center">
-            <h1 class="home__title">Happy Tummy with tasty FOOD</h1>
-            <div class="separator mx-auto"></div>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint,
-              molestias suscipit velit quisquam ex doloremque explicabo corporis
-              culpa nisi blanditiis maiores excepturi unde modi illo ipsa optio
-              quis recusandae tempora?
-            </p>
-            <div class="text-base flex items-center justify-center gap-4 py-10 md:justify-start md:gap-20">
-              <div class="text-center">
-                <i class="fa-solid fa-utensils text-secondaryColor text-4xl"></i>
-                <br />
-                Delicious
-              </div>
 
-              <div class="text-center">
-                <i class="fa-solid fa-droplet text-secondaryColor text-4xl"></i>
-                <br />
-                Fresh
-              </div> 
+      <!-- ═══ HERO ═══ -->
+      <section id="home" class="min-h-screen grid grid-cols-1 md:grid-cols-2 items-center gap-10 px-6 lg:px-20 pt-28 pb-16 relative overflow-hidden">
+        <!-- Glow BG -->
+        <div class="hero-glow-bg"></div>
 
-              <div class="text-center">
-                <i class="fa-brands fa-envira text-secondaryColor text-4xl"></i>
-                <br />
-                Organic
-              </div>
-            </div>
+        <!-- Text Content -->
+        <div class="home__content text-center md:text-left reveal-left">
+          <!-- Eyebrow -->
+          <div class="flex items-center gap-3 justify-center md:justify-start mb-5">
+            <span class="block w-10 h-px bg-goldColor"></span>
+            <span class="text-goldColor text-xs tracking-widest uppercase font-semibold">Est. 2019 · Premium Cuisine</span>
+          </div>
 
-            <a href="#" class="btn btn-primary">learn more</a>
-          </div>
-        </div>
-      </section>
-      <!--  Category  -->
-      <section id="category">
-        <div class="container flex flex-col gap-5 md:flex-row">
-          <div
-            class="bg-secondaryColor flex py-3 rounded-lg overflow-hidden md-flex-1"
-          >
-            <div class="basic-1/3 relative">
-              <img
-                src="img/burger-1.png"
-                class="relative w-28 -bottom-4 -left-4"
-              />
+          <h1 class="home__title font-playfair text-5xl lg:text-7xl font-black uppercase leading-none tracking-tight mb-6">
+            Happy Tummy<br>with Tasty
+            <em class="text-goldColor block italic not-italic">Food.</em>
+          </h1>
+
+          <div class="separator w-16 h-0.5 bg-goldColor my-5 mx-auto md:mx-0"></div>
+
+          <p class="font-cormorant text-lg text-silverColor leading-relaxed max-w-md mx-auto md:mx-0 mb-8">
+            A culinary journey crafted with passion — where every bite tells a story of fresh ingredients, bold flavors, and timeless tradition.
+          </p>
+
+          <!-- Highlight Icons -->
+          <div class="flex items-center justify-center md:justify-start gap-10 py-6">
+            <div class="text-center">
+              <i class="fa-solid fa-utensils text-goldColor text-3xl mb-1"></i>
+              <p class="text-xs tracking-widest uppercase text-silverColor mt-1">Delicious</p>
             </div>
-            <div class="mb-2">
-              <h4 class="card__title">Food</h4>
-              <p clas="text-xs">Lorem ipsum dolor sit amet consect</p>
-              <a herf="#" class="text-blackColor cursor-pointer">Buy online</a>
+            <div class="text-center">
+              <i class="fa-solid fa-droplet text-goldColor text-3xl mb-1"></i>
+              <p class="text-xs tracking-widest uppercase text-silverColor mt-1">Fresh</p>
             </div>
-          </div>
-          <div
-            class="bg-redColor flex py-3 rounded-lg overflow-hidden md-flex-1"
-          >
-            <div class="basic-1/3 relative">
-              <img
-                src="img/snack-1.png"
-                class="relative w-28 -bottom-4 -left-4"
-              />
-            </div>
-            <div class="mb-2">
-              <h4 class="card__title">Food</h4>
-              <p clas="text-xs">Lorem ipsum dolor sit amet consect</p>
-              <a herf="#" class="text-blackColor cursor-pointer">Buy online</a>
+            <div class="text-center">
+              <i class="fa-brands fa-envira text-goldColor text-3xl mb-1"></i>
+              <p class="text-xs tracking-widest uppercase text-silverColor mt-1">Organic</p>
             </div>
           </div>
-          <div
-            class="bg-greenColor flex py-3 rounded-lg overflow-hidden md-flex-1"
-          >
-            <div class="basic-1/3 relative">
-              <img
-                src="img/beverage-2.png"
-                class="relative w-28 -bottom-4 -left-4"
-              />
+
+          <!-- CTAs -->
+          <div class="flex items-center justify-center md:justify-start gap-6 mt-4">
+            <a href="#menu" class="btn btn-primary">Explore Menu</a>
+            <a href="#about" class="flex items-center gap-2 text-xs tracking-widest uppercase text-silverColor hover:text-goldColor transition-colors duration-300 group">
+              Our Story
+              <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-300"></i>
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="flex gap-10 justify-center md:justify-start mt-10 pt-8 border-t border-white/5">
+            <div>
+              <p class="font-playfair text-3xl font-bold text-goldColor">48+</p>
+              <p class="text-xs tracking-widest uppercase text-mutedColor mt-0.5">Menu Items</p>
             </div>
-            <div class="mb-2">
-              <h4 class="card__title">Food</h4>
-              <p clas="text-xs">Lorem ipsum dolor sit amet consect</p>
-              <a herf="#" class="text-blackColor cursor-pointer">Buy online</a>
+            <div>
+              <p class="font-playfair text-3xl font-bold text-goldColor">12K</p>
+              <p class="text-xs tracking-widest uppercase text-mutedColor mt-0.5">Happy Guests</p>
+            </div>
+            <div>
+              <p class="font-playfair text-3xl font-bold text-goldColor">4.9</p>
+              <p class="text-xs tracking-widest uppercase text-mutedColor mt-0.5">Star Rating</p>
             </div>
           </div>
         </div>
-      </section>
-      <!--Promo-->
-      <section id="promo">
-        <div class="container flex flex-col gap-5 lg:gap-10 lg:flex-row">
-          <div
-            class="bg-primaryColorLight  dark:bg-darkColor flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:md-flex-1"
-          >
-            <img
-              src="img/promo-1.png"
-              class="w-40 mx-auto hover:animate-movingY"
-            />
-            <div class="space-y-2 pt-5">
-              <p class="text-xs text-secondaryColor">Payday promo</p>
-              <h3 class="card__title">Get A 10% Discount on payday Week</h3>
-              <p class="paragraph">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <a herf="#" class="text-xs text-secondaryColor">Buy Online</a>
-            </div>
-          </div>
-          <div
-            class="bg-primaryColorLight  dark:bg-darkColor flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:md-flex-1"
-          >
-            <img
-              src="img/promo-2.png"
-              class="w-40 mx-auto hover:animate-movingY"
-            />
-            <div class="space-y-2 pt-5">
-              <p class="text-xs text-secondaryColor">Payday promo</p>
-              <h3 class="card__title">Get A 10% Discount on payday Week</h3>
-              <p class="paragraph">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <a herf="#" class="text-xs text-secondaryColor">Buy Online</a>
-            </div>
+
+        <!-- Hero Image -->
+        <div class="relative flex justify-center items-center reveal-right">
+          <div class="hero-pulse-glow"></div>
+          <img src="./img/home-image.png" alt="Signature Food" class="home__image w-64 md:w-full max-w-md relative z-10 animate-floatY drop-shadow-gold" />
+          <!-- Badge -->
+          <div class="absolute bottom-0 left-0 bg-darkCard border border-goldColor/20 px-5 py-4 z-20 animate-floatY" style="animation-delay:1.5s">
+            <p class="font-playfair text-3xl font-black text-goldColor leading-none">#1</p>
+            <p class="text-xs tracking-widest uppercase text-mutedColor mt-1">Chef's Pick</p>
           </div>
         </div>
       </section>
-      <!-- About -->
-      <section id="about">
-        <div class="container flex flex-col gap-10 md:flex-row">
-          <div class="flex-1">
-            <img src="img/about.jpg" alt="about image" class="rounded-lg" />
+
+      <!-- ═══ CATEGORIES ═══ -->
+      <section id="category" class="bg-darkMid border-y border-goldColor/10 px-6 lg:px-20 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-px">
+
+          <div class="cat-card bg-darkCard p-8 flex items-center gap-6 group hover:-translate-y-1 transition-all duration-400 reveal">
+            <div class="relative flex-shrink-0">
+              <img src="img/burger-1.png" class="w-24 relative z-10 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <div>
+              <p class="text-goldColor text-xs tracking-widest uppercase font-semibold mb-1">Category 01</p>
+              <h4 class="card__title font-playfair text-xl font-bold mb-2">Gourmet Food</h4>
+              <p class="text-xs text-mutedColor leading-relaxed mb-3">Handcrafted meals made with premium locally sourced ingredients.</p>
+              <a href="#menu" class="cat-link text-goldColor text-xs tracking-wider uppercase flex items-center gap-2 hover:gap-3 transition-all duration-300">
+                Order Now <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
           </div>
-          <div class="flex-1">
-            <h2 class="section__title">
-              Find Food and Drinks ALL-IN-ONE FOR BEST TASTE.
+
+          <div class="cat-card bg-darkCard p-8 flex items-center gap-6 group hover:-translate-y-1 transition-all duration-400 reveal" style="transition-delay:0.15s">
+            <div class="relative flex-shrink-0">
+              <img src="img/snack-1.png" class="w-24 relative z-10 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <div>
+              <p class="text-goldColor text-xs tracking-widest uppercase font-semibold mb-1">Category 02</p>
+              <h4 class="card__title font-playfair text-xl font-bold mb-2">Premium Snacks</h4>
+              <p class="text-xs text-mutedColor leading-relaxed mb-3">Artisan bites and seasonal delicacies for every craving.</p>
+              <a href="#menu" class="cat-link text-goldColor text-xs tracking-wider uppercase flex items-center gap-2 hover:gap-3 transition-all duration-300">
+                Order Now <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="cat-card bg-darkCard p-8 flex items-center gap-6 group hover:-translate-y-1 transition-all duration-400 reveal" style="transition-delay:0.3s">
+            <div class="relative flex-shrink-0">
+              <img src="img/beverage-2.png" class="w-24 relative z-10 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <div>
+              <p class="text-goldColor text-xs tracking-widest uppercase font-semibold mb-1">Category 03</p>
+              <h4 class="card__title font-playfair text-xl font-bold mb-2">Fine Beverages</h4>
+              <p class="text-xs text-mutedColor leading-relaxed mb-3">Curated drinks and specialty blends to complement any meal.</p>
+              <a href="#menu" class="cat-link text-goldColor text-xs tracking-wider uppercase flex items-center gap-2 hover:gap-3 transition-all duration-300">
+                Order Now <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══ PROMO ═══ -->
+      <section id="promo" class="bg-darkBase px-6 lg:px-20 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-px">
+
+          <div class="promo-card bg-darkCard p-10 flex flex-col md:flex-row items-center gap-8 group hover:-translate-y-1 transition-all duration-400 relative overflow-hidden reveal-left">
+            <div class="promo-card-bar"></div>
+            <img src="img/promo-1.png" class="w-36 flex-shrink-0 group-hover:scale-105 group-hover:rotate-2 transition-transform duration-400 drop-shadow-gold" />
+            <div>
+              <span class="inline-block border border-goldColor/30 text-goldColor text-xs tracking-widest uppercase px-3 py-1 mb-4">Payday Promo</span>
+              <h3 class="card__title font-playfair text-2xl font-bold mb-3 leading-tight">Get 10% Off on Payday Week</h3>
+              <p class="text-xs text-mutedColor leading-relaxed mb-4">Celebrate month-end with our exclusive payday offer across all signature dishes.</p>
+              <a href="#" class="promo-link text-goldColor text-xs tracking-widest uppercase flex items-center gap-2 hover:gap-4 transition-all duration-300">
+                Claim Offer <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="promo-card bg-darkCard p-10 flex flex-col md:flex-row items-center gap-8 group hover:-translate-y-1 transition-all duration-400 relative overflow-hidden reveal-right">
+            <div class="promo-card-bar"></div>
+            <img src="img/promo-2.png" class="w-36 flex-shrink-0 group-hover:scale-105 group-hover:rotate-2 transition-transform duration-400 drop-shadow-gold" />
+            <div>
+              <span class="inline-block border border-goldColor/30 text-goldColor text-xs tracking-widest uppercase px-3 py-1 mb-4">Weekend Special</span>
+              <h3 class="card__title font-playfair text-2xl font-bold mb-3 leading-tight">Free Dessert on Every Order</h3>
+              <p class="text-xs text-mutedColor leading-relaxed mb-4">This weekend, every main course comes with a complimentary house dessert.</p>
+              <a href="#" class="promo-link text-goldColor text-xs tracking-widest uppercase flex items-center gap-2 hover:gap-4 transition-all duration-300">
+                Claim Offer <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══ ABOUT ═══ -->
+      <section id="about" class="bg-darkMid px-6 lg:px-20 py-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+          <!-- Image Side -->
+          <div class="relative reveal-left">
+            <div class="about-frame-border"></div>
+            <img src="img/about.jpg" alt="About FoodLify" class="w-full h-auto md:h-[540px] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500" />
+            <div class="absolute -bottom-6 -right-6 bg-goldColor text-darkBase px-6 py-5">
+              <p class="font-playfair text-3xl font-black leading-none">5★</p>
+              <p class="text-xs tracking-widest uppercase font-semibold mt-1">Rated Excellence</p>
+            </div>
+          </div>
+
+          <!-- Text Side -->
+          <div class="reveal-right">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="block w-8 h-px bg-goldColor"></span>
+              <span class="text-goldColor text-xs tracking-widest uppercase font-semibold">Our Story</span>
+            </div>
+            <h2 class="section__title font-playfair text-4xl lg:text-5xl font-black uppercase leading-tight mb-4">
+              Find Food &amp; Drinks<br>
+              <em class="text-goldColor italic">All‑in‑One</em>
             </h2>
-            <div class="separator"></div>
-            <p class="paragraph">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore
-              rerum at, assumenda, modi reprehenderit commodi libero odio,
-              doloribus dolorem deleniti sint consectetur molestiae in.
-              Consequatur et placeat rerum itaque nostrum.
+            <div class="separator w-14 h-0.5 bg-goldColor my-5"></div>
+            <p class="font-cormorant text-lg text-silverColor leading-relaxed mb-4">
+              Founded on the belief that exceptional food should be accessible to all — FoodLify has grown from a humble kitchen into a culinary landmark where quality, creativity, and warmth converge on every plate.
             </p>
-            <ul class="grid grid-cols-2 py-5">
-              <li class="text-xs text-paragraphColor">
-                <i class="fa-solid fa-check text-secondaryColor"></i>Best Price
-              </li>
-              <li class="text-xs text-paragraphColor">
-                <i class="fa-solid fa-check text-secondaryColor"></i>Fresh
-                Ingredient
-              </li>
-              <li class="text-xs text-paragraphColor">
-                <i class="fa-solid fa-check text-secondaryColor"></i>Best
-                Service
-              </li>
-              <li class="text-xs text-paragraphColor">
-                <i class="fa-solid fa-check text-secondaryColor"></i>Health
-                Protection
-              </li>
+            <ul class="grid grid-cols-2 gap-y-3 py-5 mb-6">
+              <li class="flex items-center gap-2 text-xs text-silverColor"><span class="block w-5 h-px bg-goldColor flex-shrink-0"></span>Best Competitive Price</li>
+              <li class="flex items-center gap-2 text-xs text-silverColor"><span class="block w-5 h-px bg-goldColor flex-shrink-0"></span>Fresh Daily Ingredients</li>
+              <li class="flex items-center gap-2 text-xs text-silverColor"><span class="block w-5 h-px bg-goldColor flex-shrink-0"></span>Award‑Winning Service</li>
+              <li class="flex items-center gap-2 text-xs text-silverColor"><span class="block w-5 h-px bg-goldColor flex-shrink-0"></span>Health Conscious Options</li>
+              <li class="flex items-center gap-2 text-xs text-silverColor"><span class="block w-5 h-px bg-goldColor flex-shrink-0"></span>Locally Sourced Produce</li>
+              <li class="flex items-center gap-2 text-xs text-silverColor"><span class="block w-5 h-px bg-goldColor flex-shrink-0"></span>Certified Organic</li>
             </ul>
-            <a class="btn btn-primary">About Us</a>
+            <a href="#menu" class="btn btn-primary">Explore Our World</a>
           </div>
+
         </div>
       </section>
-      <!-- menu -->
-      <section id="menu">
-        <div class="container">
-          <div class="max-w-md mx-auto text-center">
-            <h2 class="section__title">Our Best Menu</h2>
-            <div class="separator mx-auto"></div>
-            <p class="paragraph">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Officiis, odit. Doloremque veniam eaque neque distinctio?
-            </p>
-            <div class="tabs_wrap">
-              <ul class="flex flex-wrap justify-center gap-3 py-10">
-                <li data-tabs="all" class="btn bg-primaryColor active  dark:bg-darkColor">All</li>
-                <li data-tabs="food" class="btn bg-primaryColor  dark:bg-darkColor">Food</li>
-                <li data-tabs="snack" class="btn bg-primaryColor  dark:bg-darkColor">Snack</li>
-                <li data-tabs="beverage" class="btn bg-primaryColor  dark:bg-darkColor">
-                  Beverage
-                </li>
-              </ul>
-            </div>
+
+      <!-- ═══ MENU ═══ -->
+      <section id="menu" class="bg-darkBase px-6 lg:px-20 py-24">
+        <div class="max-w-xl mx-auto text-center mb-14 reveal">
+          <div class="flex items-center gap-3 justify-center mb-3">
+            <span class="block w-8 h-px bg-goldColor"></span>
+            <span class="text-goldColor text-xs tracking-widest uppercase font-semibold">Our Selection</span>
+            <span class="block w-8 h-px bg-goldColor"></span>
           </div>
+          <h2 class="section__title font-playfair text-4xl font-black uppercase mb-4">
+            Our Best <em class="text-goldColor italic">Menu</em>
+          </h2>
+          <div class="separator w-14 h-0.5 bg-goldColor mx-auto my-4"></div>
+          <p class="font-cormorant text-lg text-silverColor leading-relaxed">
+            Every dish is a masterpiece — crafted with passion, plated with precision, delivered with care.
+          </p>
         </div>
-        <div>
-          <ul
-            class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12"
-          >
-            <!-- food -->
-            <li class="item_wrap food ">
-              <div
-                class="h-56 grid place-items-center bg-primaryColorLight   dark:bg-darkColor rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/burger-1.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <li class="item_wrap food">
-              <div
-                class="h-56 grid place-items-center bg-primaryColorLight  dark:bg-darkColor rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/burger-2.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <li class="item_wrap food">
-              <div
-                class="h-56 grid place-items-center  dark:bg-darkColor bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/burger-3.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <li class="item_wrap food">
-              <div
-                class="h-56 grid place-items-center  dark:bg-darkColor bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/burger-4.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <li class="item_wrap food">
-              <div
-                class="h-56 grid place-items-center bg-primaryColorLight  dark:bg-darkColor rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/burger-5.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <!-- snack -->
-            <li class="item_wrap snack">
-              <div
-                class="h-56 grid place-items-center  dark:bg-darkColor bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/snack-1.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <li class="item_wrap snack">
-              <div
-                class="h-56 grid place-items-center  dark:bg-darkColor bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/snack-2.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <li class="item_wrap snack">
-              <div
-                class="h-56 grid place-items-center  dark:bg-darkColor bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/snack-3.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <li class="item_wrap snack">
-              <div
-                class="h-56 grid place-items-center  dark:bg-darkColor bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/snack-4.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <li class="item_wrap snack">
-              <div
-                class="h-56 grid place-items-center  dark:bg-darkColor bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/snack-5.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <li class="item_wrap snack">
-              <div
-                class="h-56 grid place-items-center  dark:bg-darkColor bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/snack-6.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <!-- beverage -->
-            <li class="item_wrap beverage">
-              <div
-                class="h-56 grid place-items-center  dark:bg-darkColor bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/beverage-1.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <li class="item_wrap beverage">
-              <div
-                class="h-56 grid place-items-center  dark:bg-darkColor bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/beverage-2.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <li class="item_wrap beverage">
-              <div
-                class="h-56 grid place-items-center  dark:bg-darkColor bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/beverage-3.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <li class="item_wrap beverage">
-              <div
-                class="h-56 grid place-items-center  dark:bg-darkColor bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/beverage-3.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
-            <li class="item_wrap beverage">
-              <div
-                class="h-56 grid place-items-center  dark:bg-darkColor bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linerar duration-200"
-              >
-                <img
-                  src="img/beverage-4.png"
-                  alt=""
-                  class="w-40 hover:scale-110 ease-linear duration-200"
-                />
-              </div>
-              <div>
-                <div>
-                  <h4 class="card__title">Regular Burger</h4>
-                  <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Repellat explicabo magnam, optio cumque veniam
-                    exercitationem.
-                  </p>
-                </div>
-                <p class="text secondaryColor">$42.50</p>
-              </div>
-            </li>
+
+        <!-- Tabs -->
+        <div class="tabs_wrap reveal">
+          <ul class="flex flex-wrap justify-center gap-0 mb-14 border border-white/8">
+            <li data-tabs="all"      class="tab-item btn text-xs tracking-widest uppercase active">All Items</li>
+            <li data-tabs="food"     class="tab-item btn text-xs tracking-widest uppercase">Food</li>
+            <li data-tabs="snack"    class="tab-item btn text-xs tracking-widest uppercase">Snacks</li>
+            <li data-tabs="beverage" class="tab-item btn text-xs tracking-widest uppercase">Beverages</li>
           </ul>
         </div>
+
+        <!-- Grid -->
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px">
+
+          <!-- ── FOOD ── -->
+          <li class="item_wrap food menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/burger-1.png" alt="Classic Burger" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">Signature Food</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Classic Smash Burger</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Double-smashed beef patty, aged cheddar, caramelized onions, secret sauce.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$18.50</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <li class="item_wrap food menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal" style="transition-delay:0.1s">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/burger-2.png" alt="BBQ Burger" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">Chef's Special</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">BBQ Smokehouse</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Slow-cooked pulled pork, crispy bacon, house-made BBQ glaze, brioche bun.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$22.00</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <li class="item_wrap food menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal" style="transition-delay:0.2s">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/burger-3.png" alt="Burger 3" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">Stone Fired</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Truffle Mushroom</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Wood-fired dough, black truffle oil, wild mushrooms, fresh thyme, mozzarella.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$26.00</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <li class="item_wrap food menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal" style="transition-delay:0.3s">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/burger-4.png" alt="Burger 4" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">Light Bites</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Grilled Chicken Wrap</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Herb-marinated chicken, avocado, romaine, sun-dried tomato, lemon aioli.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$14.50</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <li class="item_wrap food menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/burger-5.png" alt="Burger 5" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">House Favorite</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Double Stack Deluxe</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Two premium patties, lettuce, pickles, thousand island, sesame bun.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$24.00</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <!-- ── SNACKS ── -->
+          <li class="item_wrap snack menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/snack-1.png" alt="Snack 1" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">Side Dish</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Truffle Parmesan Fries</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Golden shoestring fries, shaved parmesan, truffle oil, sea salt flakes.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$9.00</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <li class="item_wrap snack menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal" style="transition-delay:0.1s">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/snack-2.png" alt="Snack 2" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">Sharing Platter</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Loaded Nachos</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Corn tortillas, jalapeño cheese sauce, guacamole, pico de gallo, sour cream.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$11.50</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <li class="item_wrap snack menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal" style="transition-delay:0.2s">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/snack-3.png" alt="Snack 3" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">Crispy Bites</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Smoked Onion Rings</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Beer-battered sweet onion, smoked paprika aioli, crispy panko crust.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$8.50</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <li class="item_wrap snack menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal" style="transition-delay:0.3s">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/snack-4.png" alt="Snack 4" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">House Favorite</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Honey Buffalo Wings</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Crispy wings, house honey-buffalo glaze, celery sticks, blue cheese dip.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$13.00</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <li class="item_wrap snack menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/snack-5.png" alt="Snack 5" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">Golden Bites</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Cheesy Potato Wedges</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Thick-cut russet potatoes, cheddar fondue, chives, crispy bacon bits.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$10.00</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <li class="item_wrap snack menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal" style="transition-delay:0.1s">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/snack-6.png" alt="Snack 6" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">Artisan</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Mini Slider Trio</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Three slider varieties — beef, chicken & veggie — with signature sauces.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$15.00</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <!-- ── BEVERAGES ── -->
+          <li class="item_wrap beverage menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/beverage-1.png" alt="Beverage 1" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">Signature Drink</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Golden Citrus Spritz</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Elderflower cordial, fresh citrus, sparkling water, edible gold flakes.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$8.00</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <li class="item_wrap beverage menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal" style="transition-delay:0.1s">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/beverage-2.png" alt="Beverage 2" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">Cold Press</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Mango Matcha Fusion</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Ceremonial grade matcha, fresh mango, oat milk, honey, chia seeds.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$7.50</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <li class="item_wrap beverage menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal" style="transition-delay:0.2s">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/beverage-3.png" alt="Beverage 3" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">Artisan Coffee</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Single Origin Pour Over</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Ethiopian Yirgacheffe, bright floral notes, slow-drip perfection.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$6.00</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <li class="item_wrap beverage menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal" style="transition-delay:0.3s">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/beverage-3.png" alt="Beverage 4" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">House Made</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Rose & Lavender Lemonade</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Hand-squeezed lemon, rose water, lavender syrup, fresh mint.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$6.50</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <li class="item_wrap beverage menu-card bg-darkCard p-6 group hover:bg-darkSurface transition-all duration-400 reveal">
+            <div class="h-44 grid place-items-center bg-white/2 mb-5 overflow-hidden">
+              <img src="img/beverage-4.png" alt="Beverage 5" class="w-32 group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-400 drop-shadow-xl" />
+            </div>
+            <p class="text-goldColor text-xs tracking-widest uppercase mb-1">Mocktail</p>
+            <h4 class="card__title font-playfair text-lg font-bold mb-2">Midnight Berry Cooler</h4>
+            <p class="paragraph text-xs text-mutedColor leading-relaxed mb-4">Mixed berries, hibiscus tea, ginger syrup, crushed ice, mint sprig.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-playfair text-xl font-bold text-goldColor">$7.00</span>
+              <button class="menu-add-btn w-8 h-8 border border-goldColor/30 text-goldColor flex items-center justify-center text-sm hover:bg-goldColor hover:text-darkBase transition-all duration-300">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+
+        </ul>
       </section>
-      <!--Review-->
-      <section id="review" class="bg-primaryColorLight dark:bg-darkColorLight py-20">
-        <div class="customer__review container">
-          <div class="max-w-md mx-auto text-center">
-            <h2 class="section__title">CUSTOMER REVIEW</h2>
-            <div class="separator mx-auto"></div>
-            <p class="paragraph">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+      <!-- ═══ REVIEWS ═══ -->
+      <section id="review" class="bg-darkMid px-6 lg:px-20 py-24">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div class="reveal-left">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="block w-8 h-px bg-goldColor"></span>
+              <span class="text-goldColor text-xs tracking-widest uppercase font-semibold">Testimonials</span>
+            </div>
+            <h2 class="section__title font-playfair text-4xl font-black uppercase leading-tight">
+              What Our Guests<br><em class="text-goldColor italic">Are Saying</em>
+            </h2>
           </div>
+          <p class="font-cormorant text-lg text-silverColor max-w-xs leading-relaxed reveal-right">
+            Thousands of guests have made FoodLify their favourite dining destination.
+          </p>
+        </div>
 
-          <div class="swiper py-10">
-            <ul class="swiper-wrapper">
-              <li class="swiper-slide">
-                <div class="flex flex-col gap-5 bg-primaryColor dark:bg-darkColor rounded-lg p-6">
-                  <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique culpa ut amet voluptas asperiores alias sed consequatur.</p>
-                  <div class="flex items-center">
-                    <img src="img/review-1.jpg" alt="review image" class="w-12 h-12 rounded-full">
-                    <div class="ml-2">
-                      <p class="font-oswald uppercase">John doe</p>
-                      <p class="paragraph">Designer</p>
-                    </div>
-                    <i class="fa-solid fa-quote-right text-4xl text-secondaryColor ml-auto"></i>
+        <!-- Swiper -->
+        <div class="swiper py-4">
+          <ul class="swiper-wrapper">
+
+            <li class="swiper-slide">
+              <div class="review-card bg-darkCard p-8 flex flex-col gap-5 hover:-translate-y-1 transition-all duration-400">
+                <div class="text-goldColor text-sm tracking-widest">★★★★★</div>
+                <p class="font-cormorant text-lg italic text-silverColor leading-relaxed">
+                  "Every visit is a revelation. The attention to detail in every dish is extraordinary — FoodLify has completely redefined what I expect from a restaurant."
+                </p>
+                <div class="flex items-center gap-3">
+                  <img src="img/review-1.jpg" alt="Alexandra M." class="w-11 h-11 rounded-full border border-goldColor/20 object-cover" />
+                  <div>
+                    <p class="font-playfair font-bold text-sm">Alexandra M.</p>
+                    <p class="text-goldColor text-xs tracking-widest uppercase mt-0.5">Food Critic</p>
                   </div>
+                  <i class="fa-solid fa-quote-right text-3xl text-goldColor/20 ml-auto"></i>
                 </div>
-              </li>
+              </div>
+            </li>
 
-              <li class="swiper-slide">
-                <div class="flex flex-col gap-5 bg-primaryColor dark:bg-darkColor rounded-lg p-6">
-                  <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique culpa ut amet voluptas asperiores alias sed consequatur.</p>
-                  <div class="flex items-center">
-                    <img src="img/review-2.jpg" alt="review image" class="w-12 h-12 rounded-full">
-                    <div class="ml-2">
-                      <p class="font-oswald uppercase">John doe</p>
-                      <p class="paragraph">Designer</p>
-                    </div>
-                    <i class="fa-solid fa-quote-right text-4xl text-secondaryColor ml-auto"></i>
+            <li class="swiper-slide">
+              <div class="review-card bg-darkCard p-8 flex flex-col gap-5 hover:-translate-y-1 transition-all duration-400">
+                <div class="text-goldColor text-sm tracking-widest">★★★★★</div>
+                <p class="font-cormorant text-lg italic text-silverColor leading-relaxed">
+                  "The ambiance, the service, the food — all world-class. I brought international clients here and they were completely blown away."
+                </p>
+                <div class="flex items-center gap-3">
+                  <img src="img/review-2.jpg" alt="James Chen" class="w-11 h-11 rounded-full border border-goldColor/20 object-cover" />
+                  <div>
+                    <p class="font-playfair font-bold text-sm">James Chen</p>
+                    <p class="text-goldColor text-xs tracking-widest uppercase mt-0.5">Business Executive</p>
                   </div>
+                  <i class="fa-solid fa-quote-right text-3xl text-goldColor/20 ml-auto"></i>
                 </div>
-              </li>
+              </div>
+            </li>
 
-              <li class="swiper-slide">
-                <div class="flex flex-col gap-5 bg-primaryColor dark:bg-darkColor rounded-lg p-6">
-                  <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique culpa ut amet voluptas asperiores alias sed consequatur.</p>
-                  <div class="flex items-center">
-                    <img src="img/review-3.jpg" alt="review image" class="w-12 h-12 rounded-full">
-                    <div class="ml-2">
-                      <p class="font-oswald uppercase">John doe</p>
-                      <p class="paragraph">Designer</p>
-                    </div>
-                    <i class="fa-solid fa-quote-right text-4xl text-secondaryColor ml-auto"></i>
+            <li class="swiper-slide">
+              <div class="review-card bg-darkCard p-8 flex flex-col gap-5 hover:-translate-y-1 transition-all duration-400">
+                <div class="text-goldColor text-sm tracking-widest">★★★★★</div>
+                <p class="font-cormorant text-lg italic text-silverColor leading-relaxed">
+                  "The truffle fries alone are worth every penny. But it's the whole experience — warm, attentive, memorable. FoodLify is in a category of its own."
+                </p>
+                <div class="flex items-center gap-3">
+                  <img src="img/review-3.jpg" alt="Sofia Reyes" class="w-11 h-11 rounded-full border border-goldColor/20 object-cover" />
+                  <div>
+                    <p class="font-playfair font-bold text-sm">Sofia Reyes</p>
+                    <p class="text-goldColor text-xs tracking-widest uppercase mt-0.5">Lifestyle Blogger</p>
                   </div>
+                  <i class="fa-solid fa-quote-right text-3xl text-goldColor/20 ml-auto"></i>
                 </div>
-              </li>
+              </div>
+            </li>
 
-              <li class="swiper-slide">
-                <div class="flex flex-col gap-5 bg-primaryColor dark:bg-darkColor rounded-lg p-6">
-                  <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique culpa ut amet voluptas asperiores alias sed consequatur.</p>
-                  <div class="flex items-center">
-                    <img src="img/review-4.jpg" alt="review image" class="w-12 h-12 rounded-full">
-                    <div class="ml-2">
-                      <p class="font-oswald uppercase">John doe</p>
-                      <p class="paragraph">Designer</p>
-                    </div>
-                    <i class="fa-solid fa-quote-right text-4xl text-secondaryColor ml-auto"></i>
+            <li class="swiper-slide">
+              <div class="review-card bg-darkCard p-8 flex flex-col gap-5 hover:-translate-y-1 transition-all duration-400">
+                <div class="text-goldColor text-sm tracking-widest">★★★★★</div>
+                <p class="font-cormorant text-lg italic text-silverColor leading-relaxed">
+                  "Outstanding quality in every single bite. The chef's dedication to flavour and presentation sets this place leagues apart from anything else in the city."
+                </p>
+                <div class="flex items-center gap-3">
+                  <img src="img/review-4.jpg" alt="Marcus Lee" class="w-11 h-11 rounded-full border border-goldColor/20 object-cover" />
+                  <div>
+                    <p class="font-playfair font-bold text-sm">Marcus Lee</p>
+                    <p class="text-goldColor text-xs tracking-widest uppercase mt-0.5">Chef & Author</p>
                   </div>
+                  <i class="fa-solid fa-quote-right text-3xl text-goldColor/20 ml-auto"></i>
                 </div>
-              </li>
+              </div>
+            </li>
 
-              <li class="swiper-slide">
-                <div class="flex flex-col gap-5 bg-primaryColor dark:bg-darkColor rounded-lg p-6">
-                  <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique culpa ut amet voluptas asperiores alias sed consequatur.</p>
-                  <div class="flex items-center">
-                    <img src="img/review-5.jpg" alt="review image" class="w-12 h-12 rounded-full">
-                    <div class="ml-2">
-                      <p class="font-oswald uppercase">John doe</p>
-                      <p class="paragraph">Designer</p>
-                    </div>
-                    <i class="fa-solid fa-quote-right text-4xl text-secondaryColor ml-auto"></i>
+            <li class="swiper-slide">
+              <div class="review-card bg-darkCard p-8 flex flex-col gap-5 hover:-translate-y-1 transition-all duration-400">
+                <div class="text-goldColor text-sm tracking-widest">★★★★★</div>
+                <p class="font-cormorant text-lg italic text-silverColor leading-relaxed">
+                  "I have dined in restaurants across three continents and FoodLify holds its own with the best of them. Truly world-class hospitality and cuisine."
+                </p>
+                <div class="flex items-center gap-3">
+                  <img src="img/review-5.jpg" alt="Priya Nair" class="w-11 h-11 rounded-full border border-goldColor/20 object-cover" />
+                  <div>
+                    <p class="font-playfair font-bold text-sm">Priya Nair</p>
+                    <p class="text-goldColor text-xs tracking-widest uppercase mt-0.5">Travel Writer</p>
                   </div>
+                  <i class="fa-solid fa-quote-right text-3xl text-goldColor/20 ml-auto"></i>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </li>
 
-            <div class="swiper-pagination"></div>
+          </ul>
+          <div class="swiper-pagination mt-6"></div>
+        </div>
+      </section>
+
+      <!-- ═══ CONTACT / NEWSLETTER ═══ -->
+      <section id="contact" class="bg-goldColor py-20 px-6 lg:px-20 relative overflow-hidden">
+        <div class="newsletter-bg-text">FOODLIFY</div>
+        <div class="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-10">
+          <div class="md:flex-1">
+            <h2 class="font-playfair text-4xl lg:text-5xl font-black text-darkBase uppercase leading-none mb-3">
+              Get Exclusive<br>Updates
+            </h2>
+            <p class="text-sm text-darkBase/60 max-w-sm">
+              Chef specials, seasonal menus, early access to new launches — delivered to your inbox.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-0 md:flex-1">
+            <input type="email" placeholder="Your email address"
+              class="flex-1 p-4 bg-darkBase/10 text-darkBase placeholder-darkBase/40 outline-none border-none text-sm font-montserrat" />
+            <button class="px-8 py-4 bg-darkBase text-creamColor text-xs font-semibold tracking-widest uppercase hover:bg-darkCard transition-colors duration-300 font-montserrat">
+              Subscribe
+            </button>
           </div>
         </div>
       </section>
-      <!-- Contact -->
-      <section id="contact" class="bg-secondaryColor py-16">
-        <div class="container flex flex-col gap-5 md:items-center md:flex-row">
-          <div class="space-y-4 md:flex-1">
-            <h2 class="section__title text-blackColor">GET EXCLUSIVE UPDATE</h2>
-            <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
 
-          <div class="flex flex-col gap-3 md:flex-row md:flex-1">
-            <input type="email" placeholder="Email address" class="p-2 text-blackColor rounded-lg outline-none md:w-full">
-            <a href="" class="flex items-center justify-center gap-2 btn bg-blackColor hover:opacity-75">
-              <i class="fa-solid fa-paper-plane"></i>
-              Subscribe
+    </main>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="bg-darkBase border-t border-white/5 px-6 lg:px-20 pt-20 pb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-14 border-b border-white/5 mb-8">
+
+        <!-- Brand -->
+        <div>
+          <a href="#" class="font-playfair text-3xl font-black uppercase text-creamColor block mb-4">
+            Food<span class="text-goldColor italic">lify</span>
+          </a>
+          <p class="text-xs text-mutedColor leading-relaxed mb-6">
+            A culinary experience that transcends the ordinary. Discover the art of great food, crafted with passion and served with excellence.
+          </p>
+          <div class="flex gap-3">
+            <a href="#" class="w-9 h-9 border border-white/10 flex items-center justify-center text-mutedColor text-sm hover:border-goldColor hover:text-goldColor transition-all duration-300">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-9 h-9 border border-white/10 flex items-center justify-center text-mutedColor text-sm hover:border-goldColor hover:text-goldColor transition-all duration-300">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="w-9 h-9 border border-white/10 flex items-center justify-center text-mutedColor text-sm hover:border-goldColor hover:text-goldColor transition-all duration-300">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" class="w-9 h-9 border border-white/10 flex items-center justify-center text-mutedColor text-sm hover:border-goldColor hover:text-goldColor transition-all duration-300">
+              <i class="fa-brands fa-tiktok"></i>
             </a>
           </div>
         </div>
-      </section>
-    </main>
-    </main>
-    <!-- Footer -->
-    <footer>
-      <footer>
-        <section class="footer">
-          <div class="container">
-            <ul class="grid grid-cols-1 items-start gap-5 pb-5 md:grid-cols-2 lg:grid-cols-4">
-              <li>
-                <div class="space-y-3">
-                  <a href="" class="text-4xl font-oswald uppercase">
-                    Food<span class="text-secondaryColor">Lify</span>
-                  </a>
-  
-                  <p class="text-xs">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                  </p>
-                </div>
-              </li>
-  
-              <li>
-                <div class="flex flex-col gap-3">
-                  <h3 class="text-lg uppercase font-oswald">SUPPORT</h3>
-                  <a href="" class="text-xs hover:text-secondaryColor">FAQ's</a>
-                  <a href="" class="text-xs hover:text-secondaryColor">Privacy Policy</a>
-                  <a href="" class="text-xs hover:text-secondaryColor">Term & Condition</a>
-                  <a href="" class="text-xs hover:text-secondaryColor">Contact</a>
-                </div>
-              </li>
-  
-              <li class="space-y-8">
-                <div class="space-y-2">
-                  <h3 class="text-lg uppercase font-oswald">phone</h3>
-  
-                  <p class="flex items-center gap-2 text-xs">
-                    <i class="fa-solid fa-phone text-lg text-secondaryColor"></i>
-                    +1 000 000 0000
-                  </p>
-                </div>
-  
-                <div class="space-y-2">
-                  <h3 class="text-lg uppercase font-oswald">email</h3>
-  
-                  <p class="flex items-center gap-2 text-xs">
-                    <i class="fa-solid fa-envelope text-lg text-secondaryColor"></i>
-                    Foodlify.info@email.com
-                  </p>
-                </div>
-              </li>
-  
-              <li class="space-y-8">
-                <div class="space-y-2">
-                  <h3 class="text-lg uppercase font-oswald">address</h3>
-  
-                  <p class="flex items-center gap-2 text-xs">
-                    <i class="fa-solid fa-location-dot text-lg text-secondaryColor"></i>
-                    Address goes here
-                  </p>
-                </div>
-  
-                <div class="space-y-2">
-                  <h3 class="text-lg uppercase font-oswald">follow us</h3>
-  
-                  <div class="space-x-3">
-                    <i class="fa-brands fa-facebook-f text-lg cursor-pointer text-secondaryColor hover:-translate-y-1 ease-in duration-200"></i>
-                    <i class="fa-brands fa-twitter text-lg cursor-pointer text-secondaryColor hover:-translate-y-1 ease-in duration-200"></i>
-                    <i class="fa-brands fa-square-instagram text-lg cursor-pointer text-secondaryColor hover:-translate-y-1 ease-in duration-200"></i>
-                  </div>
-                </div>
-              </li>
-            </ul>
-  
-            <div class="flex flex-col items-center border-t border-primaryColorLight dark:border-darkColorLight py-5 md:flex-row md:justify-between">
-              <p class="paragraph">Foodlify Template Kit by shalini</p>
-              <p class="paragraph">Copyright © 2023. All rights reserved by shalini.</p>
-            </div>
+
+        <!-- Support Links -->
+        <div>
+          <h3 class="font-playfair text-sm font-bold uppercase tracking-widest text-creamColor mb-5">Support</h3>
+          <div class="flex flex-col gap-3">
+            <a href="#" class="text-xs text-mutedColor hover:text-goldColor transition-colors duration-200">FAQ's</a>
+            <a href="#" class="text-xs text-mutedColor hover:text-goldColor transition-colors duration-200">Privacy Policy</a>
+            <a href="#" class="text-xs text-mutedColor hover:text-goldColor transition-colors duration-200">Terms & Conditions</a>
+            <a href="#" class="text-xs text-mutedColor hover:text-goldColor transition-colors duration-200">Reservation Policy</a>
+            <a href="#" class="text-xs text-mutedColor hover:text-goldColor transition-colors duration-200">Contact Us</a>
           </div>
-        </section>
-      </footer>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-playfair text-sm font-bold uppercase tracking-widest text-creamColor mb-3">Phone</h3>
+            <p class="flex items-center gap-2 text-xs text-mutedColor">
+              <i class="fa-solid fa-phone text-goldColor"></i> +1 (000) 000-0000
+            </p>
+          </div>
+          <div>
+            <h3 class="font-playfair text-sm font-bold uppercase tracking-widest text-creamColor mb-3">Email</h3>
+            <p class="flex items-center gap-2 text-xs text-mutedColor">
+              <i class="fa-solid fa-envelope text-goldColor"></i> hello@foodlify.com
+            </p>
+          </div>
+        </div>
+
+        <!-- Address + Hours -->
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-playfair text-sm font-bold uppercase tracking-widest text-creamColor mb-3">Address</h3>
+            <p class="flex items-start gap-2 text-xs text-mutedColor leading-relaxed">
+              <i class="fa-solid fa-location-dot text-goldColor mt-0.5"></i>
+              123 Gourmet Avenue<br/>New York, NY 10001
+            </p>
+          </div>
+          <div>
+            <h3 class="font-playfair text-sm font-bold uppercase tracking-widest text-creamColor mb-3">Hours</h3>
+            <p class="flex items-start gap-2 text-xs text-mutedColor leading-relaxed">
+              <i class="fa-solid fa-clock text-goldColor mt-0.5"></i>
+              Mon–Fri: 11am – 10pm<br/>Sat–Sun: 10am – 11pm
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+        <p class="text-xs text-mutedColor">© 2026 <span class="text-goldColor">FoodLify</span>. All rights reserved.</p>
+        <p class="text-xs text-mutedColor">Designed with <span class="text-goldColor">♥</span> for exceptional dining</p>
+      </div>
     </footer>
 
-    <!-- Scroll Up -->
-    <a href="#" class="fixed right-4 -bottom-1/2 bg-secondaryColor shadow-sm inline-block px-4 py-2 rounded-full text-lg text-blackColor z-50 hover:-translate-y-1 ease-in duration-200" 
-    id="scroll-up">
-      <i class="fa-solid fa-arrow-up"></i>
-    </a>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      const swiper = new Swiper(".swiper", {
-        speed: 400,
-        spaceBetween: 30,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false
-        },
-        // If we need pagination
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        },
-        grabCursor: true,
-        breakpoints: {
-          // when window width is >= 640px
-          640: {
-            slidesPerView: 1,
-          },
-          // when window width is >= 768px
-          768: {
-            slidesPerView: 2,
-          },
-          // when window width is >= 1024px
-          1024: {
-            slidesPerView: 3,
-          }
-        }
-      });
-    </script>
-    <!--Scroll Reveal -->
+    <!-- Scroll Reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
-    <!-- Main.js -->
+    <!-- Main JS -->
     <script src="main.js"></script>
   </body>
 </html>
